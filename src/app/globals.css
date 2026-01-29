@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Global layout + theming */
+body {
+  @apply bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 antialiased;
+}
+
+main {
+  @apply min-h-screen;
+}
+
+section {
+  @apply scroll-mt-24;
+}
+
+/* Custom scrollbars (desktop) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee #020617;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #22d3ee, #38bdf8);
+  border-radius: 999px;
+}
+
+*::selection {
+  background: rgba(34, 211, 238, 0.2);
+  color: #e5faff;
+}
