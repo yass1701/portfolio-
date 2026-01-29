@@ -17,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className="py-20 px-4 fade-up">
       <div className="max-w-5xl mx-auto bg-slate-950/60 rounded-3xl border border-slate-800/80 p-6 md:p-10 backdrop-blur">
         <div className="text-center mb-10">
           <p className="text-sm uppercase tracking-[0.25em] text-cyan-400 mb-3">
@@ -178,7 +178,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-medium rounded-lg transition-colors duration-200"
+              className="w-full px-8 py-3 bg-gradient-to-r from-cyan-500 via-sky-500 to-teal-400 hover:from-cyan-400 hover:via-sky-400 hover:to-teal-300 text-slate-950 font-semibold rounded-lg shadow-[0_18px_40px_rgba(34,211,238,0.55)] transition-all duration-200"
             >
               Send Message
             </button>

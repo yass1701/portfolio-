@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 border-t border-slate-800/80 bg-slate-950/70 backdrop-blur">
+    <footer className="py-8 px-4 border-t border-slate-800/80 bg-slate-950/70 backdrop-blur fade-up">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-gray-400 text-sm md:text-base">
           &copy; {new Date().getFullYear()} Yash Soni. All rights reserved.

@@ -58,7 +58,7 @@ export default function Projects() {
       : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-20 px-4 fade-up">
       <div className="max-w-6xl mx-auto bg-slate-950/60 border border-slate-800/80 rounded-3xl p-6 md:p-10 backdrop-blur">
         <div className="text-center mb-8 md:mb-10">
           <p className="text-sm uppercase tracking-[0.25em] text-cyan-400 mb-3">
