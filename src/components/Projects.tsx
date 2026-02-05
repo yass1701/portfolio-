@@ -25,6 +25,7 @@ const projects = [
     tags: ["React", "Spring Boot", "PostgreSQL", "Spring Security", "JWT"],
     link: "https://footybot-fullstack.vercel.app",
     image: "/images/futquiz.png",
+    embed: "https://footybot-fullstack.vercel.app",
     category: "REACT JS",
   },
   {
@@ -115,7 +116,13 @@ export default function Projects() {
               className="group bg-slate-900/70 rounded-2xl p-6 hover:bg-slate-900 border border-slate-800/80 hover:border-cyan-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]"
             >
               <div className="h-40 bg-gradient-to-br from-cyan-500/15 via-slate-900 to-purple-500/15 rounded-xl mb-5 overflow-hidden flex items-center justify-center">
-                {"image" in project && project.image ? (
+                {"embed" in project && project.embed ? (
+                  <iframe
+                    src={project.embed}
+                    title={project.title}
+                    className="w-full h-full border-0 rounded-xl"
+                  />
+                ) : "image" in project && project.image ? (
                   <ProjectImage src={project.image} alt={`${project.title} screenshot`} />
                 ) : (
                   <span className="text-4xl opacity-60">🖼️</span>
