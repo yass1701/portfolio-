@@ -2,6 +2,21 @@
 
 import { useState } from "react";
 
+function ProjectImage({ src, alt }: { src: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return <span className="text-4xl opacity-60">🖼️</span>;
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="w-full h-full object-cover"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 const projects = [
   {
     title: "FutQuiz – Full-Stack Football Statistics Platform",
@@ -99,13 +114,9 @@ export default function Projects() {
               key={index}
               className="group bg-slate-900/70 rounded-2xl p-6 hover:bg-slate-900 border border-slate-800/80 hover:border-cyan-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]"
             >
-              <div className="h-40 bg-slate-800/80 rounded-xl mb-5 overflow-hidden flex items-center justify-center">
+              <div className="h-40 bg-gradient-to-br from-cyan-500/15 via-slate-900 to-purple-500/15 rounded-xl mb-5 overflow-hidden flex items-center justify-center">
                 {"image" in project && project.image ? (
-                  <img
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    className="w-full h-full object-cover"
-                  />
+                  <ProjectImage src={project.image} alt={`${project.title} screenshot`} />
                 ) : (
                   <span className="text-4xl opacity-60">🖼️</span>
                 )}
