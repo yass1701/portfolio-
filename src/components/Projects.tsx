@@ -26,6 +26,7 @@ const projects = [
     link: "https://footybot-fullstack.vercel.app",
     image: "/images/futquiz.png",
     embed: "https://footybot-fullstack.vercel.app",
+    codeLink: "https://github.com/dashboard",
     category: "REACT JS",
   },
   {
@@ -115,18 +116,47 @@ export default function Projects() {
               key={index}
               className="group bg-slate-900/70 rounded-2xl p-6 hover:bg-slate-900 border border-slate-800/80 hover:border-cyan-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]"
             >
-              <div className="h-40 bg-gradient-to-br from-cyan-500/15 via-slate-900 to-purple-500/15 rounded-xl mb-5 overflow-hidden flex items-center justify-center">
-                {"embed" in project && project.embed ? (
-                  <iframe
-                    src={project.embed}
-                    title={project.title}
-                    className="w-full h-full border-0 rounded-xl"
-                  />
-                ) : "image" in project && project.image ? (
-                  <ProjectImage src={project.image} alt={`${project.title} screenshot`} />
-                ) : (
-                  <span className="text-4xl opacity-60">🖼️</span>
-                )}
+              <div className="relative h-48 bg-gradient-to-br from-cyan-500/15 via-slate-900 to-purple-500/15 rounded-xl mb-5 overflow-hidden">
+                <div className="w-full h-full">
+                  {"embed" in project && project.embed ? (
+                    <iframe
+                      src={project.embed}
+                      title={project.title}
+                      className="w-full h-full border-0"
+                    />
+                  ) : "image" in project && project.image ? (
+                    <ProjectImage src={project.image} alt={`${project.title} screenshot`} />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-4xl opacity-60">🖼️</span>
+                    </div>
+                  )}
+                </div>
+                <div className="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                  <span className="px-4 py-1 rounded-full text-xs font-semibold tracking-wide bg-white/10 text-cyan-300 border border-cyan-400/50 backdrop-blur">
+                    {project.category}
+                  </span>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-full bg-cyan-500 text-slate-950 text-sm font-semibold shadow-md shadow-cyan-500/40 hover:bg-cyan-400 transition-colors"
+                    >
+                      Live Demo
+                    </a>
+                    {"codeLink" in project && project.codeLink && (
+                      <a
+                        href={project.codeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 rounded-full border border-cyan-400/70 text-cyan-200 text-sm font-semibold hover:bg-cyan-500/10 transition-colors"
+                      >
+                        Source Code
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
               <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                 {project.title}
