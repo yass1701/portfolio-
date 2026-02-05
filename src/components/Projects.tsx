@@ -4,11 +4,12 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "FutQuiz: Full-Stack Football Statistics Platform",
+    title: "FutQuiz – Full-Stack Football Statistics Platform",
     description:
-      "Full-stack web app built with React and Java/Spring Boot providing league standings, match results, head-to-head stats, and quizzes. Features JWT authentication and admin role-based access.",
+      "Full-stack web application built with React and Spring Boot providing live league standings, match results, head-to-head statistics, quizzes and leaderboard. Includes JWT authentication and admin panel.",
     tags: ["React", "Spring Boot", "PostgreSQL", "Spring Security", "JWT"],
-    link: "https://github.com/dashboard",
+    link: "https://footybot-fullstack.vercel.app",
+    image: "/images/futquiz.png",
     category: "REACT JS",
   },
   {
@@ -98,8 +99,16 @@ export default function Projects() {
               key={index}
               className="group bg-slate-900/70 rounded-2xl p-6 hover:bg-slate-900 border border-slate-800/80 hover:border-cyan-500/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]"
             >
-              <div className="h-40 bg-gradient-to-br from-cyan-500/15 via-slate-900 to-purple-500/15 rounded-xl mb-5 flex items-center justify-center">
-                <span className="text-4xl opacity-60">🖼️</span>
+              <div className="h-40 bg-slate-800/80 rounded-xl mb-5 overflow-hidden flex items-center justify-center">
+                {"image" in project && project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-4xl opacity-60">🖼️</span>
+                )}
               </div>
               <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                 {project.title}
